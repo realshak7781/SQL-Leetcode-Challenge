@@ -1,0 +1,11 @@
+select
+curr.id
+from 
+weather curr
+join weather prev
+on prev.recordDate=(
+    select max(recordDate)
+    from weather 
+    where recordDate<curr.recordDate
+)
+where curr.temperature>prev.temperature AND datediff(curr.recordDate,prev.recordDate)=1;
