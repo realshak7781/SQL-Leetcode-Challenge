@@ -1,3 +1,5 @@
+
+-- APPROACH 1:
 (
 select employee_id,salary as bonus
 from Employees
