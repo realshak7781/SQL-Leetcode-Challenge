@@ -1,7 +1,7 @@
 
 ## 🧠 SQL LeetCode 50 Challenge
 
-This repository tracks my progress on solving the **Top 50 LeetCode SQL Questions** for interview preparation.
+This repository tracks my progress on solving the **Hackerrank & LeetCode SQL Questions** for interview preparation.
 
 ### 🚀 Goal
 
