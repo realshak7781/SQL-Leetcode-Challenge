@@ -1,3 +1,17 @@
+
+-- better approach:
+
+select d.name as Department,e.name as Employee,e.salary as Salary
+from Employee e inner join Department d on e.departmentId=d.id
+
+where e.salary = (
+    select max(e1.salary)
+    from Employee e1 inner join Department d1 on e1.departmentId=d1.id
+    where d1.name=d.name
+)
+
+
+-- approach 2:
 SELECT  
     d1.name AS Department,
     e2.name AS Employee,
