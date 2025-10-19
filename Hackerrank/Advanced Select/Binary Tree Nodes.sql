@@ -1,0 +1,22 @@
+(
+    SELECT N, 'Root'
+    FROM BST
+    WHERE P IS NULL
+)
+UNION
+(
+    SELECT N, 'Leaf'
+    FROM BST
+    WHERE P IS NOT NULL AND N NOT IN (
+        SELECT P FROM BST WHERE P IS NOT NULL
+    )
+)
+UNION
+(
+    SELECT N, 'Inner'
+    FROM BST
+    WHERE P IS NOT NULL AND N IN (
+        SELECT P FROM BST WHERE P IS NOT NULL
+    )
+)
+ORDER BY N;
